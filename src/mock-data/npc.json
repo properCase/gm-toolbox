@@ -1,0 +1,53 @@
+[
+  {
+    "name": "Selach",
+    "selected": false,
+    "race": "Human",
+    "description": "Herein lies the description",
+    "voice": "Like the Halflife 2 creepy guy",
+    "motives": "Take the Temporal Seed",
+    "profession": "Helping The Galesh",
+    "stats": {
+      "cr": 0.25,
+      "exp": 250,
+      "ac": 12,
+      "acDescription": "leather armor",
+      "hp": 11,
+      "hpDice": "2d8+2",
+      "speed": 30,
+      "senses": "passive 10",
+      "languages": [
+        "Common",
+        "All others"
+      ],
+      "abilityScores": {
+        "str": 10,
+        "dex": 11,
+        "con": 12,
+        "int": 9,
+        "wis": 7,
+        "cha": 10
+      },
+      "actions": [
+        {
+          "name": "Left Claw",
+          "toHit": 5,
+          "rangeShort": 5,
+          "rangeLong": null,
+          "target": "1 target",
+          "damageDice": "2d8+1",
+          "damageType": "slash"
+        },
+        {
+          "name": "Teleport",
+          "toHit": 7,
+          "rangeShort": 80,
+          "rangeLong": 320,
+          "target": "1 target",
+          "damageDice": "9d12+3",
+          "damageType": "piercing"
+        }
+      ]
+    }
+  }
+]

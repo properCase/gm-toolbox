@@ -1,0 +1,104 @@
+$colorSet: ((#2C3039 #CBBFBE #872A23 #CF3239 #DA9835 #C13D3A #E3DADA #1A3C5A #F9D849 #88D3CD #2C3039) (black #dedede #555555 #dcdcdc #777777 #ababab #999999 #888888 #bbbbbb #666666 black) (black white gray darkgray orange red blue purple gray gray transparent) (black white gray darkgray orange red blue purple gray gray transparent) (black white gray darkgray orange red blue purple gray gray transparent) (black white gray darkgray orange red blue purple gray gray transparent) (black white gray darkgray orange red blue purple gray gray transparent) (black white gray darkgray orange red blue purple gray gray transparent) (black white gray darkgray orange red blue purple gray gray transparent) (black white gray darkgray orange red blue purple gray gray transparent))
+
+$reds: crimson red pink
+$greens: green darkgreen forestgreen
+$grays: black gray lightgray
+
+$colors: (($reds) ($greens) ($grays))
+
+.avatar
+  position: relative
+  float: left
+  +size(64px)
+  background: gray
+  margin: 1em
+  border-radius: $br * 2
+  overflow: hidden
+  &.ico0:after, &.ico1:after, &.ico2:after, &.ico3:after, &.ico4:after, &.ico5:after, &.ico6:after, &.ico7:after, &.ico8:after, &.ico9:after, &.ico10:after
+    content: ''
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    +size(64px)
+    z-index: 1
+  &.ico0:after
+    +backgroundSizer('/assets/ico/avatar/frozen-arrow.svg', '4px 4px / 50px')
+  &.ico1:after
+    +backgroundSizer('/assets/ico/avatar/cross-shield.svg', '4px 4px / 50px')
+  &.ico2:after
+    +backgroundSizer('/assets/ico/avatar/crossed-axes.svg', '4px 4px / 50px')
+  &.ico3:after
+    +backgroundSizer('/assets/ico/avatar/crossed-swords.svg', '4px 4px / 50px')
+  &.ico4:after
+    +backgroundSizer('/assets/ico/avatar/magic-palm.svg', '4px 4px / 50px')
+  &.ico5:after
+    +backgroundSizer('/assets/ico/avatar/star-skull.svg', '4px 4px / 50px')
+  &.ico6:after
+    +backgroundSizer('/assets/ico/avatar/mounted-knight.svg', '4px 4px / 50px')
+  &.ico7:after
+    +backgroundSizer('/assets/ico/avatar/stone-crafting.svg', '4px 4px / 50px')
+  &.ico8:after
+    +backgroundSizer('/assets/ico/avatar/zeus-sword.svg', '4px 4px / 50px')
+  &.ico9:after
+    +backgroundSizer('/assets/ico/avatar/seven-pointed-star.svg', '4px 4px / 50px')
+  &.fg0, &.fg1, &.fg2, &.fg3, &.fg4, &.fg5, &.fg6, &.fg7, &.fg8, &.fg9
+    &:before
+      content: ''
+      display: block
+      position: relative
+      +size(64px)
+  &.fg0:before
+    left: -50%
+  &.fg1:before
+    transform: rotate(-45deg)
+  &.fg2:before
+    transform: translate(0, 50%)
+  &.fg3:before
+    transform: rotate(-45deg) translate(-75%, -0%) scale(1.5)
+  &.fg4:before
+    transform: rotate(45deg) translate(-75%, -0%) scale(1.5)
+  &.fg5:before
+    transform: scale(.4, 1)
+  &.fg6:before
+    transform: rotate(-45deg) scale(.4, 1.5)
+  &.fg7:before
+    transform: rotate(45deg) scale(.4, 1.5)
+  &.fg8:before
+    transform: rotate(-45deg) translate(-50%, 50%)
+  &.fg9:before
+    visible: hidden
+
+  @for $iFg from 0 through 9
+    @for $iColor from 0 through 9
+      &.fg#{$iFg}.color#{$iColor}:before
+        background-color: nth(nth($colorSet, $iFg+1), $iColor+1)
+      &.bg#{$iFg}.color#{$iColor}
+        background-color: nth(nth($colorSet, $iFg+1), $iColor+2)
+
+
+  @for $i from 1 through 3
+    @for $j from 1 through 3
+      &.fg#{$i - 1}.color#{$j - 1}:before
+        background-color: nth(nth($colors, $i), $j)
+
+  //&.fg0.color0:before
+  //  background: nth($colorSet0, 1)
+  //&.fg0.color1:before
+  //  background: nth($colorSet0, 2)
+  //&.fg0.color2:before
+  //  background: nth($colorSet0, 3)
+  //&.color3:before
+  //  background: red
+  //&.color4:before
+  //  background: red
+  //&.color5:before
+  //  background: red
+  //&.color6:before
+  //  background: red
+  //&.color7:before
+  //  background: red
+  //&.color8:before
+  //  background: red
+  //&.color9:before
+  //  background: red

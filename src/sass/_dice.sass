@@ -1,0 +1,38 @@
+d4, d6, d8, d10, d12, d20
+  display: inline-block
+  position: relative
+  margin-right: 20px
+
+  &:after
+    +size(24px)
+    content: ''
+    position: absolute
+    right: -24px
+
+d6:after
+  +backgroundSizer('/assets/ico/dice/d6.svg', center)
+d8:after
+  +backgroundSizer('/assets/ico/dice/d8.svg', center)
+d20:after
+  +backgroundSizer('/assets/ico/dice/d20.svg', center)
+
+dice
+  display: inline-block
+  position: relative
+  border: 2px solid $font-color
+  border-radius: .8em 5px 5px .8em
+  vertical-align: text-bottom
+  top: .15em
+  //overflow: hidden
+  & > ul > li
+    font-size: .8em
+    line-height: 1.5em
+    display: block
+    float: left
+    padding: 0 .3em
+    &:nth-of-type(2)
+      background-color: $font-color
+      color: $paper
+      border-radius: 0 .4em .4em 0
+    &:last-of-type
+      padding: 0 .3em 0 .1em

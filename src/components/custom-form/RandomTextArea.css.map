@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,iBAAiB;EACf,MAAM,EAAE,OAAO",
+"sources": ["RandomTextArea.sass"],
+"names": [],
+"file": "RandomTextArea.css"
+}

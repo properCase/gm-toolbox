@@ -1,0 +1,839 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ * License: none (public domain) */
+@import 'https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i';
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box; }
+
+em {
+  font-style: italic; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+div, ul, li {
+  box-sizing: border-box; }
+
+.clear {
+  clear: both; }
+
+d4, d6, d8, d10, d12, d20 {
+  display: inline-block;
+  position: relative;
+  margin-right: 20px; }
+  d4:after, d6:after, d8:after, d10:after, d12:after, d20:after {
+    width: 24px;
+    height: 24px;
+    content: "";
+    position: absolute;
+    right: -24px; }
+
+d6:after {
+  background: transparent url("/assets/ico/dice/d6.svg") no-repeat center; }
+
+d8:after {
+  background: transparent url("/assets/ico/dice/d8.svg") no-repeat center; }
+
+d20:after {
+  background: transparent url("/assets/ico/dice/d20.svg") no-repeat center; }
+
+dice {
+  display: inline-block;
+  position: relative;
+  border: 2px solid #5d534d;
+  border-radius: 0.8em 5px 5px 0.8em;
+  vertical-align: text-bottom;
+  top: 0.15em; }
+  dice > ul > li {
+    font-size: 0.8em;
+    line-height: 1.5em;
+    display: block;
+    float: left;
+    padding: 0 0.3em; }
+    dice > ul > li:nth-of-type(2) {
+      background-color: #5d534d;
+      color: #f2f2f2;
+      border-radius: 0 0.4em 0.4em 0; }
+    dice > ul > li:last-of-type {
+      padding: 0 0.3em 0 0.1em; }
+
+.avatar {
+  position: relative;
+  float: left;
+  width: 64px;
+  height: 64px;
+  background: gray;
+  margin: 1em;
+  border-radius: 4px;
+  overflow: hidden; }
+  .avatar.ico0:after, .avatar.ico1:after, .avatar.ico2:after, .avatar.ico3:after, .avatar.ico4:after, .avatar.ico5:after, .avatar.ico6:after, .avatar.ico7:after, .avatar.ico8:after, .avatar.ico9:after, .avatar.ico10:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 64px;
+    height: 64px;
+    z-index: 1; }
+  .avatar.ico0:after {
+    background: transparent url("/assets/ico/avatar/frozen-arrow.svg") no-repeat 4px 4px / 50px; }
+  .avatar.ico1:after {
+    background: transparent url("/assets/ico/avatar/cross-shield.svg") no-repeat 4px 4px / 50px; }
+  .avatar.ico2:after {
+    background: transparent url("/assets/ico/avatar/crossed-axes.svg") no-repeat 4px 4px / 50px; }
+  .avatar.ico3:after {
+    background: transparent url("/assets/ico/avatar/crossed-swords.svg") no-repeat 4px 4px / 50px; }
+  .avatar.ico4:after {
+    background: transparent url("/assets/ico/avatar/magic-palm.svg") no-repeat 4px 4px / 50px; }
+  .avatar.ico5:after {
+    background: transparent url("/assets/ico/avatar/star-skull.svg") no-repeat 4px 4px / 50px; }
+  .avatar.ico6:after {
+    background: transparent url("/assets/ico/avatar/mounted-knight.svg") no-repeat 4px 4px / 50px; }
+  .avatar.ico7:after {
+    background: transparent url("/assets/ico/avatar/stone-crafting.svg") no-repeat 4px 4px / 50px; }
+  .avatar.ico8:after {
+    background: transparent url("/assets/ico/avatar/zeus-sword.svg") no-repeat 4px 4px / 50px; }
+  .avatar.ico9:after {
+    background: transparent url("/assets/ico/avatar/seven-pointed-star.svg") no-repeat 4px 4px / 50px; }
+  .avatar.fg0:before, .avatar.fg1:before, .avatar.fg2:before, .avatar.fg3:before, .avatar.fg4:before, .avatar.fg5:before, .avatar.fg6:before, .avatar.fg7:before, .avatar.fg8:before, .avatar.fg9:before {
+    content: "";
+    display: block;
+    position: relative;
+    width: 64px;
+    height: 64px; }
+  .avatar.fg0:before {
+    left: -50%; }
+  .avatar.fg1:before {
+    transform: rotate(-45deg); }
+  .avatar.fg2:before {
+    transform: translate(0, 50%); }
+  .avatar.fg3:before {
+    transform: rotate(-45deg) translate(-75%, 0%) scale(1.5); }
+  .avatar.fg4:before {
+    transform: rotate(45deg) translate(-75%, 0%) scale(1.5); }
+  .avatar.fg5:before {
+    transform: scale(0.4, 1); }
+  .avatar.fg6:before {
+    transform: rotate(-45deg) scale(0.4, 1.5); }
+  .avatar.fg7:before {
+    transform: rotate(45deg) scale(0.4, 1.5); }
+  .avatar.fg8:before {
+    transform: rotate(-45deg) translate(-50%, 50%); }
+  .avatar.fg9:before {
+    visible: hidden; }
+  .avatar.fg0.color0:before {
+    background-color: #2C3039; }
+  .avatar.bg0.color0 {
+    background-color: #CBBFBE; }
+  .avatar.fg0.color1:before {
+    background-color: #CBBFBE; }
+  .avatar.bg0.color1 {
+    background-color: #872A23; }
+  .avatar.fg0.color2:before {
+    background-color: #872A23; }
+  .avatar.bg0.color2 {
+    background-color: #CF3239; }
+  .avatar.fg0.color3:before {
+    background-color: #CF3239; }
+  .avatar.bg0.color3 {
+    background-color: #DA9835; }
+  .avatar.fg0.color4:before {
+    background-color: #DA9835; }
+  .avatar.bg0.color4 {
+    background-color: #C13D3A; }
+  .avatar.fg0.color5:before {
+    background-color: #C13D3A; }
+  .avatar.bg0.color5 {
+    background-color: #E3DADA; }
+  .avatar.fg0.color6:before {
+    background-color: #E3DADA; }
+  .avatar.bg0.color6 {
+    background-color: #1A3C5A; }
+  .avatar.fg0.color7:before {
+    background-color: #1A3C5A; }
+  .avatar.bg0.color7 {
+    background-color: #F9D849; }
+  .avatar.fg0.color8:before {
+    background-color: #F9D849; }
+  .avatar.bg0.color8 {
+    background-color: #88D3CD; }
+  .avatar.fg0.color9:before {
+    background-color: #88D3CD; }
+  .avatar.bg0.color9 {
+    background-color: #2C3039; }
+  .avatar.fg1.color0:before {
+    background-color: black; }
+  .avatar.bg1.color0 {
+    background-color: #dedede; }
+  .avatar.fg1.color1:before {
+    background-color: #dedede; }
+  .avatar.bg1.color1 {
+    background-color: #555555; }
+  .avatar.fg1.color2:before {
+    background-color: #555555; }
+  .avatar.bg1.color2 {
+    background-color: #dcdcdc; }
+  .avatar.fg1.color3:before {
+    background-color: #dcdcdc; }
+  .avatar.bg1.color3 {
+    background-color: #777777; }
+  .avatar.fg1.color4:before {
+    background-color: #777777; }
+  .avatar.bg1.color4 {
+    background-color: #ababab; }
+  .avatar.fg1.color5:before {
+    background-color: #ababab; }
+  .avatar.bg1.color5 {
+    background-color: #999999; }
+  .avatar.fg1.color6:before {
+    background-color: #999999; }
+  .avatar.bg1.color6 {
+    background-color: #888888; }
+  .avatar.fg1.color7:before {
+    background-color: #888888; }
+  .avatar.bg1.color7 {
+    background-color: #bbbbbb; }
+  .avatar.fg1.color8:before {
+    background-color: #bbbbbb; }
+  .avatar.bg1.color8 {
+    background-color: #666666; }
+  .avatar.fg1.color9:before {
+    background-color: #666666; }
+  .avatar.bg1.color9 {
+    background-color: black; }
+  .avatar.fg2.color0:before {
+    background-color: black; }
+  .avatar.bg2.color0 {
+    background-color: white; }
+  .avatar.fg2.color1:before {
+    background-color: white; }
+  .avatar.bg2.color1 {
+    background-color: gray; }
+  .avatar.fg2.color2:before {
+    background-color: gray; }
+  .avatar.bg2.color2 {
+    background-color: darkgray; }
+  .avatar.fg2.color3:before {
+    background-color: darkgray; }
+  .avatar.bg2.color3 {
+    background-color: orange; }
+  .avatar.fg2.color4:before {
+    background-color: orange; }
+  .avatar.bg2.color4 {
+    background-color: red; }
+  .avatar.fg2.color5:before {
+    background-color: red; }
+  .avatar.bg2.color5 {
+    background-color: blue; }
+  .avatar.fg2.color6:before {
+    background-color: blue; }
+  .avatar.bg2.color6 {
+    background-color: purple; }
+  .avatar.fg2.color7:before {
+    background-color: purple; }
+  .avatar.bg2.color7 {
+    background-color: gray; }
+  .avatar.fg2.color8:before {
+    background-color: gray; }
+  .avatar.bg2.color8 {
+    background-color: gray; }
+  .avatar.fg2.color9:before {
+    background-color: gray; }
+  .avatar.bg2.color9 {
+    background-color: transparent; }
+  .avatar.fg3.color0:before {
+    background-color: black; }
+  .avatar.bg3.color0 {
+    background-color: white; }
+  .avatar.fg3.color1:before {
+    background-color: white; }
+  .avatar.bg3.color1 {
+    background-color: gray; }
+  .avatar.fg3.color2:before {
+    background-color: gray; }
+  .avatar.bg3.color2 {
+    background-color: darkgray; }
+  .avatar.fg3.color3:before {
+    background-color: darkgray; }
+  .avatar.bg3.color3 {
+    background-color: orange; }
+  .avatar.fg3.color4:before {
+    background-color: orange; }
+  .avatar.bg3.color4 {
+    background-color: red; }
+  .avatar.fg3.color5:before {
+    background-color: red; }
+  .avatar.bg3.color5 {
+    background-color: blue; }
+  .avatar.fg3.color6:before {
+    background-color: blue; }
+  .avatar.bg3.color6 {
+    background-color: purple; }
+  .avatar.fg3.color7:before {
+    background-color: purple; }
+  .avatar.bg3.color7 {
+    background-color: gray; }
+  .avatar.fg3.color8:before {
+    background-color: gray; }
+  .avatar.bg3.color8 {
+    background-color: gray; }
+  .avatar.fg3.color9:before {
+    background-color: gray; }
+  .avatar.bg3.color9 {
+    background-color: transparent; }
+  .avatar.fg4.color0:before {
+    background-color: black; }
+  .avatar.bg4.color0 {
+    background-color: white; }
+  .avatar.fg4.color1:before {
+    background-color: white; }
+  .avatar.bg4.color1 {
+    background-color: gray; }
+  .avatar.fg4.color2:before {
+    background-color: gray; }
+  .avatar.bg4.color2 {
+    background-color: darkgray; }
+  .avatar.fg4.color3:before {
+    background-color: darkgray; }
+  .avatar.bg4.color3 {
+    background-color: orange; }
+  .avatar.fg4.color4:before {
+    background-color: orange; }
+  .avatar.bg4.color4 {
+    background-color: red; }
+  .avatar.fg4.color5:before {
+    background-color: red; }
+  .avatar.bg4.color5 {
+    background-color: blue; }
+  .avatar.fg4.color6:before {
+    background-color: blue; }
+  .avatar.bg4.color6 {
+    background-color: purple; }
+  .avatar.fg4.color7:before {
+    background-color: purple; }
+  .avatar.bg4.color7 {
+    background-color: gray; }
+  .avatar.fg4.color8:before {
+    background-color: gray; }
+  .avatar.bg4.color8 {
+    background-color: gray; }
+  .avatar.fg4.color9:before {
+    background-color: gray; }
+  .avatar.bg4.color9 {
+    background-color: transparent; }
+  .avatar.fg5.color0:before {
+    background-color: black; }
+  .avatar.bg5.color0 {
+    background-color: white; }
+  .avatar.fg5.color1:before {
+    background-color: white; }
+  .avatar.bg5.color1 {
+    background-color: gray; }
+  .avatar.fg5.color2:before {
+    background-color: gray; }
+  .avatar.bg5.color2 {
+    background-color: darkgray; }
+  .avatar.fg5.color3:before {
+    background-color: darkgray; }
+  .avatar.bg5.color3 {
+    background-color: orange; }
+  .avatar.fg5.color4:before {
+    background-color: orange; }
+  .avatar.bg5.color4 {
+    background-color: red; }
+  .avatar.fg5.color5:before {
+    background-color: red; }
+  .avatar.bg5.color5 {
+    background-color: blue; }
+  .avatar.fg5.color6:before {
+    background-color: blue; }
+  .avatar.bg5.color6 {
+    background-color: purple; }
+  .avatar.fg5.color7:before {
+    background-color: purple; }
+  .avatar.bg5.color7 {
+    background-color: gray; }
+  .avatar.fg5.color8:before {
+    background-color: gray; }
+  .avatar.bg5.color8 {
+    background-color: gray; }
+  .avatar.fg5.color9:before {
+    background-color: gray; }
+  .avatar.bg5.color9 {
+    background-color: transparent; }
+  .avatar.fg6.color0:before {
+    background-color: black; }
+  .avatar.bg6.color0 {
+    background-color: white; }
+  .avatar.fg6.color1:before {
+    background-color: white; }
+  .avatar.bg6.color1 {
+    background-color: gray; }
+  .avatar.fg6.color2:before {
+    background-color: gray; }
+  .avatar.bg6.color2 {
+    background-color: darkgray; }
+  .avatar.fg6.color3:before {
+    background-color: darkgray; }
+  .avatar.bg6.color3 {
+    background-color: orange; }
+  .avatar.fg6.color4:before {
+    background-color: orange; }
+  .avatar.bg6.color4 {
+    background-color: red; }
+  .avatar.fg6.color5:before {
+    background-color: red; }
+  .avatar.bg6.color5 {
+    background-color: blue; }
+  .avatar.fg6.color6:before {
+    background-color: blue; }
+  .avatar.bg6.color6 {
+    background-color: purple; }
+  .avatar.fg6.color7:before {
+    background-color: purple; }
+  .avatar.bg6.color7 {
+    background-color: gray; }
+  .avatar.fg6.color8:before {
+    background-color: gray; }
+  .avatar.bg6.color8 {
+    background-color: gray; }
+  .avatar.fg6.color9:before {
+    background-color: gray; }
+  .avatar.bg6.color9 {
+    background-color: transparent; }
+  .avatar.fg7.color0:before {
+    background-color: black; }
+  .avatar.bg7.color0 {
+    background-color: white; }
+  .avatar.fg7.color1:before {
+    background-color: white; }
+  .avatar.bg7.color1 {
+    background-color: gray; }
+  .avatar.fg7.color2:before {
+    background-color: gray; }
+  .avatar.bg7.color2 {
+    background-color: darkgray; }
+  .avatar.fg7.color3:before {
+    background-color: darkgray; }
+  .avatar.bg7.color3 {
+    background-color: orange; }
+  .avatar.fg7.color4:before {
+    background-color: orange; }
+  .avatar.bg7.color4 {
+    background-color: red; }
+  .avatar.fg7.color5:before {
+    background-color: red; }
+  .avatar.bg7.color5 {
+    background-color: blue; }
+  .avatar.fg7.color6:before {
+    background-color: blue; }
+  .avatar.bg7.color6 {
+    background-color: purple; }
+  .avatar.fg7.color7:before {
+    background-color: purple; }
+  .avatar.bg7.color7 {
+    background-color: gray; }
+  .avatar.fg7.color8:before {
+    background-color: gray; }
+  .avatar.bg7.color8 {
+    background-color: gray; }
+  .avatar.fg7.color9:before {
+    background-color: gray; }
+  .avatar.bg7.color9 {
+    background-color: transparent; }
+  .avatar.fg8.color0:before {
+    background-color: black; }
+  .avatar.bg8.color0 {
+    background-color: white; }
+  .avatar.fg8.color1:before {
+    background-color: white; }
+  .avatar.bg8.color1 {
+    background-color: gray; }
+  .avatar.fg8.color2:before {
+    background-color: gray; }
+  .avatar.bg8.color2 {
+    background-color: darkgray; }
+  .avatar.fg8.color3:before {
+    background-color: darkgray; }
+  .avatar.bg8.color3 {
+    background-color: orange; }
+  .avatar.fg8.color4:before {
+    background-color: orange; }
+  .avatar.bg8.color4 {
+    background-color: red; }
+  .avatar.fg8.color5:before {
+    background-color: red; }
+  .avatar.bg8.color5 {
+    background-color: blue; }
+  .avatar.fg8.color6:before {
+    background-color: blue; }
+  .avatar.bg8.color6 {
+    background-color: purple; }
+  .avatar.fg8.color7:before {
+    background-color: purple; }
+  .avatar.bg8.color7 {
+    background-color: gray; }
+  .avatar.fg8.color8:before {
+    background-color: gray; }
+  .avatar.bg8.color8 {
+    background-color: gray; }
+  .avatar.fg8.color9:before {
+    background-color: gray; }
+  .avatar.bg8.color9 {
+    background-color: transparent; }
+  .avatar.fg9.color0:before {
+    background-color: black; }
+  .avatar.bg9.color0 {
+    background-color: white; }
+  .avatar.fg9.color1:before {
+    background-color: white; }
+  .avatar.bg9.color1 {
+    background-color: gray; }
+  .avatar.fg9.color2:before {
+    background-color: gray; }
+  .avatar.bg9.color2 {
+    background-color: darkgray; }
+  .avatar.fg9.color3:before {
+    background-color: darkgray; }
+  .avatar.bg9.color3 {
+    background-color: orange; }
+  .avatar.fg9.color4:before {
+    background-color: orange; }
+  .avatar.bg9.color4 {
+    background-color: red; }
+  .avatar.fg9.color5:before {
+    background-color: red; }
+  .avatar.bg9.color5 {
+    background-color: blue; }
+  .avatar.fg9.color6:before {
+    background-color: blue; }
+  .avatar.bg9.color6 {
+    background-color: purple; }
+  .avatar.fg9.color7:before {
+    background-color: purple; }
+  .avatar.bg9.color7 {
+    background-color: gray; }
+  .avatar.fg9.color8:before {
+    background-color: gray; }
+  .avatar.bg9.color8 {
+    background-color: gray; }
+  .avatar.fg9.color9:before {
+    background-color: gray; }
+  .avatar.bg9.color9 {
+    background-color: transparent; }
+  .avatar.fg0.color0:before {
+    background-color: crimson; }
+  .avatar.fg0.color1:before {
+    background-color: red; }
+  .avatar.fg0.color2:before {
+    background-color: pink; }
+  .avatar.fg1.color0:before {
+    background-color: green; }
+  .avatar.fg1.color1:before {
+    background-color: darkgreen; }
+  .avatar.fg1.color2:before {
+    background-color: forestgreen; }
+  .avatar.fg2.color0:before {
+    background-color: black; }
+  .avatar.fg2.color1:before {
+    background-color: gray; }
+  .avatar.fg2.color2:before {
+    background-color: lightgray; }
+
+input, textarea {
+  border-radius: 2px;
+  border: 1px solid #c1b9b5;
+  background: #f2f2f2;
+  font: 16px/1.6em "Merriweather", serif;
+  font-weight: 300;
+  color: #5d534d; }
+
+textarea {
+  width: 100%;
+  height: inherit; }
+
+body {
+  font: 16px/1.6em "Merriweather", serif;
+  font-weight: 300;
+  background-color: #dad6c5;
+  color: #5d534d; }
+
+h3 {
+  font-weight: 700;
+  border-bottom: 1px solid #aa9f99;
+  margin-bottom: 0.5em; }
+
+h2 {
+  font-size: 1.6em;
+  margin-bottom: 1em; }
+
+strong {
+  font-weight: 700; }
+
+.star {
+  width: 24px;
+  height: 24px;
+  background: transparent url("/assets/ico/star.svg") no-repeat center;
+  margin-left: 0.5em;
+  cursor: pointer; }
+  .star.selected {
+    background: transparent url("/assets/ico/filled-star.svg") no-repeat center; }
+
+.regen {
+  width: 1.45rem;
+  height: 1.45rem;
+  background: transparent url("/assets/ico/regen.svg") no-repeat center center;
+  position: relative;
+  float: left;
+  margin-right: 0.4rem;
+  cursor: pointer; }
+
+.manual {
+  width: 1.45rem;
+  height: 1.45rem;
+  background: transparent url("/assets/ico/manual-pencil.svg") no-repeat center center;
+  position: relative;
+  float: left;
+  margin-right: 0.4rem; }
+
+.header {
+  padding: 0 1em;
+  background-color: #5d534d;
+  color: #f2f2f2;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12); }
+  .header .logo {
+    display: inline-block;
+    vertical-align: bottom;
+    padding-left: 2.5rem;
+    width: auto;
+    height: 1.6rem;
+    background: transparent url("/assets/ico/treasure.svg") no-repeat left center;
+    font: 1.8rem/1.8rem "Fredericka the Great script=all rev=1", cursive;
+    margin: 0.4em 0.5em 0.4em 0; }
+  .header .tools {
+    display: inline-block; }
+    .header .tools ul {
+      display: inline-block; }
+      .header .tools ul > li {
+        display: inline-block;
+        margin: 0 1em;
+        padding: 0.8em 0;
+        cursor: pointer;
+        visibility: visible;
+        opacity: 1; }
+        .header .tools ul > li.hidden {
+          opacity: 0;
+          visibility: hidden; }
+        .header .tools ul > li:hover {
+          color: #d8bc2b; }
+          .header .tools ul > li:hover > ul {
+            display: block; }
+        .header .tools ul > li > ul {
+          color: #f2f2f2;
+          display: none;
+          position: absolute;
+          background-color: #5d534d;
+          margin-top: 0.5em;
+          border: 1px solid #f2f2f2; }
+          .header .tools ul > li > ul.adv-dis {
+            left: -135px;
+            top: -9px; }
+          .header .tools ul > li > ul:hover {
+            display: block; }
+          .header .tools ul > li > ul > li {
+            display: block;
+            padding: 0.5em 1em;
+            cursor: pointer;
+            margin: 0; }
+            .header .tools ul > li > ul > li:hover {
+              background-color: #93857d;
+              color: #f2f2f2; }
+            .header .tools ul > li > ul > li.hr {
+              border-bottom: 1px solid rgba(242, 242, 242, 0.4);
+              padding: 0; }
+  .header .settings {
+    position: relative;
+    float: right;
+    margin: 0.8em 0;
+    cursor: pointer;
+    width: 1.6em;
+    height: 1.6em;
+    background: transparent url("/assets/ico/settings.svg") no-repeat center; }
+
+.not-header {
+  padding-top: 3.5em; }
+
+.grimoire {
+  margin: 1em;
+  float: left;
+  width: 200px;
+  height: 100vw; }
+  .grimoire .section {
+    background-color: #d8bc2b;
+    padding: 0.6em 1em 1em;
+    border-radius: 2px;
+    margin-bottom: 1em;
+    box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12); }
+    .grimoire .section add {
+      display: block;
+      position: relative;
+      float: right;
+      width: 24px;
+      height: 24px;
+      background: transparent url("/assets/ico/add.svg") no-repeat center; }
+    .grimoire .section ul > li {
+      cursor: pointer; }
+
+.page, ul > li.card {
+  position: relative;
+  float: left;
+  margin: 1em;
+  padding: 0.25in;
+  background-color: #f2f2f2;
+  border-radius: 2px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.23), 0 3px 12px rgba(0, 0, 0, 0.16); }
+
+ul > li.card {
+  width: 5in;
+  height: 3in;
+  padding-top: 0.8em; }
+  ul > li.card cr {
+    float: right; }
+  ul > li.card h3 span {
+    float: right; }
+  ul > li.card ul.tabs {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; }
+    ul > li.card ul.tabs > li {
+      display: block;
+      position: relative;
+      float: left;
+      border-right: 0.5px solid rgba(93, 83, 77, 0.7);
+      border-top: 0.5px solid rgba(93, 83, 77, 0.7);
+      margin: 0;
+      padding: 0 14px;
+      text-align: center;
+      box-shadow: inset 0 1.5px 4px rgba(93, 83, 77, 0.12), inset 0 1.5px 4px rgba(93, 83, 77, 0.4); }
+      ul > li.card ul.tabs > li.selected {
+        border-top: none;
+        box-shadow: none; }
+        ul > li.card ul.tabs > li.selected:last-of-type {
+          border-right: none; }
+      ul > li.card ul.tabs > li:hover {
+        box-shadow: inset 0 0 2px rgba(93, 83, 77, 0.12), inset 0 0 2px rgba(93, 83, 77, 0.4);
+        cursor: pointer; }
+        ul > li.card ul.tabs > li:hover.selected {
+          border-top: none;
+          box-shadow: none; }
+  ul > li.card ul.stats {
+    position: absolute;
+    right: 0.5em;
+    top: 5em;
+    margin: 0.5em auto; }
+    ul > li.card ul.stats li {
+      display: block;
+      font-weight: 400;
+      padding: 0 5px;
+      border: none; }
+      ul > li.card ul.stats li span {
+        font-weight: 300;
+        margin-left: 0.5em; }
+  ul > li.card to-hit {
+    position: relative;
+    margin-right: 1.8em; }
+    ul > li.card to-hit:before {
+      content: "";
+      position: absolute;
+      right: -1.8em;
+      top: -0.25em;
+      width: 24px;
+      height: 24px;
+      background: transparent url("/assets/ico/to-hit.svg") no-repeat center; }
+
+.page {
+  min-width: 8.5in;
+  min-height: 11in;
+  border-top: 1px solid #dad6c5; }
+  .page:before, .page:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    content: "";
+    width: 8.5in;
+    height: 11in;
+    border-radius: 2px;
+    background-color: #f2f2f2;
+    box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+    z-index: -1; }
+  .page:before {
+    transform: rotate(0.55deg) translateX(5px); }
+  .page:after {
+    transform: rotate(-0.45deg); }
+
+.card ul.tab-content {
+  height: 80%; }
+  .card ul.tab-content > li {
+    display: none; }
+    .card ul.tab-content > li.show {
+      display: block;
+      height: 100%; }
+    .card ul.tab-content > li p span {
+      font-weight: 600; }
+    .card ul.tab-content > li ul.stats li {
+      font-weight: 600; }
+      .card ul.tab-content > li ul.stats li span {
+        font-weight: 300; }
+
+.dice-results div {
+  border-radius: 5px;
+  border: 1px solid #dad6c5;
+  padding: 0 0.4em;
+  background: #f2f2f2;
+  color: #5d534d;
+  opacity: 0.7; }
+
+/*# sourceMappingURL=gm-toolkit.css.map */

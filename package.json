@@ -1,11 +1,22 @@
 {
-  "name": "gm-toolbox2",
+  "name": "gmt",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "classnames": "^2.2.6",
+    "draft-js": "^0.10.5",
+    "draft-js-export-html": "^1.3.3",
+    "draft-js-export-markdown": "^1.3.3",
+    "es6-promise": "^4.2.6",
+    "isomorphic-fetch": "^2.2.1",
+    "mobx": "^5.9.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5"
+    "react-draft-wysiwyg": "^1.13.2",
+    "react-router": "^4.3.1",
+    "react-scripts": "2.1.5",
+    "use-react-router": "^1.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
