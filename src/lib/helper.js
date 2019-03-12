@@ -1,5 +1,7 @@
 const stringTheBonus = input => {
-  if (input >= 0)
+  if (!input)
+    return '0'
+  else if (input >= 0)
     return `+${input}`
   return `${input}`
 }
@@ -9,7 +11,9 @@ const range = (short, long) => {
   return `${short}ft`
 }
 const stringTheDice = diceString => {
-  let diceArray = diceString.match(/(\d\1+d\d+|\+\1|\-|\*|\/|\d\1+)/gi)
+  if (!diceString)
+    return ''
+  let diceArray = diceString.match(/(\d\1+d\d+|\+\1|-|\*|\/|\d\1+)/gi)
 
   let out = []
 

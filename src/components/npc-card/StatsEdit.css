@@ -1,0 +1,17 @@
+.stat-editor ul > li input {
+  width: 2em;
+  margin: 0.2em 0.4em; }
+.stat-editor ul > li span:first-of-type {
+  width: 2.5em;
+  display: inline-block; }
+.stat-editor ul > li span:nth-of-type(2) {
+  font-style: italic;
+  width: 2em;
+  display: inline-block;
+  text-align: center; }
+.stat-editor ul > li span:last-of-type {
+  font-weight: bold; }
+.stat-editor ul > li .racial-stat-title {
+  margin-left: 2.5em; }
+
+/*# sourceMappingURL=StatsEdit.css.map */

@@ -11,12 +11,15 @@
     "isomorphic-fetch": "^2.2.1",
     "mobx": "^5.9.0",
     "prop-types": "^15.7.2",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
     "react-draft-wysiwyg": "^1.13.2",
+    "react-markdown": "^4.0.6",
     "react-router": "^4.3.1",
-    "react-scripts": "2.1.5",
-    "use-react-router": "^1.0.3"
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.8",
+    "react-textarea-autosize": "^7.1.0",
+    "use-react-router": "^1.0.4"
   },
   "scripts": {
     "start": "react-scripts start",

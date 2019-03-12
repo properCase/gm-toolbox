@@ -578,7 +578,11 @@ dice {
   .avatar.fg2.color2:before {
     background-color: lightgray; }
 
-input, textarea {
+label {
+  font-weight: bold;
+  display: inline-block; }
+
+input, textarea, select {
   border-radius: 2px;
   border: 1px solid #c1b9b5;
   background: #f2f2f2;
@@ -589,6 +593,36 @@ input, textarea {
 textarea {
   width: 100%;
   height: inherit; }
+
+.random-input, .random-textarea, .form-field {
+  margin-bottom: 1.5em; }
+
+.button {
+  display: inline-block;
+  border-radius: 2px;
+  width: 10em;
+  line-height: 1em;
+  padding: 0.5em 1em;
+  background-color: #5d534d;
+  color: #f2f2f2;
+  text-align: center;
+  margin: 1em 0;
+  cursor: pointer;
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.3s; }
+  .button:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
+    transition: box-shadow 0.3s; }
+  .button.inverse {
+    background-color: #f2f2f2;
+    color: #5d534d;
+    font-weight: bold;
+    border: 3px solid #5d534d; }
+  .button.search {
+    height: 38px;
+    margin-top: 0;
+    vertical-align: top;
+    line-height: 1em; }
 
 body {
   font: 16px/1.6em "Merriweather", serif;
@@ -605,8 +639,22 @@ h2 {
   font-size: 1.6em;
   margin-bottom: 1em; }
 
+h1 {
+  font-size: 1.8em;
+  margin-bottom: 1em; }
+
 strong {
   font-weight: 700; }
+
+a {
+  text-underline: none;
+  color: #5d534d; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
 
 .star {
   width: 24px;
@@ -618,11 +666,12 @@ strong {
     background: transparent url("/assets/ico/filled-star.svg") no-repeat center; }
 
 .regen {
+  display: inline-block;
+  vertical-align: middle;
   width: 1.45rem;
   height: 1.45rem;
   background: transparent url("/assets/ico/regen.svg") no-repeat center center;
   position: relative;
-  float: left;
   margin-right: 0.4rem;
   cursor: pointer; }
 
@@ -650,9 +699,13 @@ strong {
     height: 1.6rem;
     background: transparent url("/assets/ico/treasure.svg") no-repeat left center;
     font: 1.8rem/1.8rem "Fredericka the Great script=all rev=1", cursive;
-    margin: 0.4em 0.5em 0.4em 0; }
+    margin: 0.4em 0.5em 0.4em 0;
+    color: #f2f2f2; }
   .header .tools {
     display: inline-block; }
+    .header .tools a {
+      color: #f2f2f2;
+      text-decoration: #f2f2f2; }
     .header .tools ul {
       display: inline-block; }
       .header .tools ul > li {
@@ -715,7 +768,7 @@ strong {
     border-radius: 2px;
     margin-bottom: 1em;
     box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12); }
-    .grimoire .section add {
+    .grimoire .section div.add {
       display: block;
       position: relative;
       float: right;
@@ -835,5 +888,10 @@ ul > li.card {
   background: #f2f2f2;
   color: #5d534d;
   opacity: 0.7; }
+
+.body-content {
+  position: relative;
+  float: left;
+  width: calc(100% - 250px); }
 
 /*# sourceMappingURL=gm-toolkit.css.map */

@@ -1,11 +1,4 @@
-$tp: transparent
-$font-color: #5d534d //#665b55
-$site-bg: #dad6c5 // #f8eec8 //#f8eec8
-$section-bg: #d8bc2b
-$paper: #f2f2f2
-$br: 2px
-$body-font: 16px/1.6em 'Merriweather', serif
-$body-font-weight: 300
+@import 'variables'
 
 @import 'reset'
 @import 'mixins'
@@ -31,8 +24,21 @@ h2
   font-size: 1.6em
   margin-bottom: 1em
 
+h1
+  font-size: 1.8em
+  margin-bottom: 1em
+
 strong
   font-weight: 700
+
+a
+  text-underline: none
+  color: $font-color
+
+.left
+  float: left
+.right
+  float: right
 
 .star
   +size(24px)
@@ -42,10 +48,12 @@ strong
   &.selected
     +backgroundSizer('/assets/ico/filled-star.svg', 'center')
 .regen
+  display: inline-block
+  vertical-align: middle
   +size(1.45rem)
   +backgroundSizer('/assets/ico/regen.svg', 'center center')
   position: relative
-  float: left
+  //float: right
   margin-right: .4rem
   cursor: pointer
 .manual
@@ -71,8 +79,12 @@ strong
     +backgroundSizer('/assets/ico/treasure.svg', 'left center')
     font: 1.8rem/1.8rem 'Fredericka the Great script=all rev=1', cursive
     margin: .4em .5em .4em 0
+    color: $paper
   .tools
     display: inline-block
+    a
+      color: $paper
+      text-decoration: $paper
     ul
       display: inline-block
       &> li
@@ -131,10 +143,10 @@ strong
   .section
     background-color: $section-bg
     padding: .6em 1em 1em
-    border-radius: $br
+    border-radius: $border-radius
     margin-bottom: 1em
     +card(1)
-    add
+    div.add
       display: block
       position: relative
       float: right
@@ -149,7 +161,7 @@ strong
   margin: 1em
   padding: .25in
   background-color: $paper
-  border-radius: $br
+  border-radius: $border-radius
   +card(2)
 
 ul > li.card
@@ -222,7 +234,7 @@ ul > li.card
     content: ''
     width: 8.5in
     height: 11in
-    border-radius: $br
+    border-radius: $border-radius
     background-color: $paper
     +card(1)
     z-index: -1
@@ -254,3 +266,8 @@ ul > li.card
   background: $paper
   color: $font-color
   opacity: .7
+
+.body-content
+  position: relative
+  float: left
+  width: calc(100% - 250px)

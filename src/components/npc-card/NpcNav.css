@@ -1,0 +1,20 @@
+.npc-nav {
+  padding-top: 1em; }
+  .npc-nav > h1 a {
+    vertical-align: middle;
+    text-decoration: none;
+    margin-left: 0.3rem; }
+    .npc-nav > h1 a:first-of-type {
+      margin-left: 0.5em; }
+  .npc-nav > h1 div {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 24px;
+    height: 24px; }
+    .npc-nav > h1 div.new {
+      background: transparent url("/assets/ico/add-filled.svg") no-repeat center; }
+    .npc-nav > h1 div.random {
+      background: transparent url("/assets/ico/regen.svg") no-repeat center; }
+
+/*# sourceMappingURL=NpcNav.css.map */

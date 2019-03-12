@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 
 import classNames from 'classnames'
-import { roll, rollDiceNotation, rollOptions } from '../lib/api/services'
+import { roll, rollOptions } from '../lib/api/services'
 import settings from '../lib/settings'
 
 const Dice = () => {
@@ -48,8 +47,8 @@ const Dice = () => {
       <ul>
         <li>d20
           <ul className='adv-dis' onClick={e => rollDie(e, 20)}>
-            <li onClick={e => this.rollDie(e, 20, 'advantage')}>Advantage</li>
-            <li onClick={e => this.rollDie(e, 20, 'disadvantage')}>Disadvantage</li>
+            <li onClick={e => rollDie(e, 20, 'advantage')}>Advantage</li>
+            <li onClick={e => rollDie(e, 20, 'disadvantage')}>Disadvantage</li>
           </ul>
         </li>
         <li className='hr'></li>

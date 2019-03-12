@@ -1,18 +1,19 @@
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React  from 'react'
+import { Link } from 'react-router-dom'
 import Dice from './Dice'
 
 const TopNav = () => {
   return (
     <div className='header'>
       <div className='tools'>
-        <span className='logo'>GM Toolkit</span>
+        <Link to='/'><span className='logo'>GM Toolkit</span></Link>
         <ul>
-          <li>Lifepath</li>
-          <li>NPC
+          <li><Link to='/lifepath'>Lifepath</Link></li>
+          <li><Link to='/npc'>NPCs</Link>
             <ul className='secondary'>
-              <li>New NPC</li>
-              <li>Full NPC</li>
+              <li><Link to='/npc/create'>New NPC</Link></li>
+              <li><Link to='/npc'>NPCs</Link></li>
               <li>Names</li>
               <li>Descriptions</li>
               <li>...</li>

@@ -1,0 +1,43 @@
+@import '../../sass/variables'
+@import '../../sass/mixins'
+
+.npc-nav
+  padding-top: 1em
+  &> h1
+    a
+      vertical-align: middle
+      text-decoration: none
+      margin-left: .3rem
+      &:first-of-type
+        margin-left: .5em
+    div
+      position: relative
+      display: inline-block
+      vertical-align: top
+      +size(24px)
+      &.new
+        +backgroundSizer('/assets/ico/add-filled.svg', center)
+      &.random
+        +backgroundSizer('/assets/ico/regen.svg', center)
+  //ul
+  //  display: inline-block
+  //  &> li
+  //    position: relative
+  //    display: inline-block
+  //    margin: 0 .5em 1em .5em
+  //    padding: .8em 0
+  //    cursor: pointer
+  //    border: 1px dotted black
+  //    +size(75px)
+  //    h1
+  //      display: inline
+  //      margin: 0
+  //    div
+  //      +size(48px)
+  //      vertical-align: bottom
+  //      &.new
+  //        top: .25em
+  //        +backgroundSizer('/assets/ico/add-large.svg', center)
+  //      &.random
+  //        top: .25em
+  //        +backgroundSizer('/assets/ico/blender.svg', center)

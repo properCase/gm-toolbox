@@ -1,133 +1,85 @@
 import React, { useState } from 'react'
-import classNames from 'classnames'
-import NpcEditor from './NPCCard'
-import { range, stringTheBonus, stringTheDice } from '../lib/helper'
-import RandomInputText from './custom-form/RandomInputText'
-import RandomTextArea from './custom-form/RandomTextArea'
+import InputText from './custom-form/RandomInputText'
+import TextArea from './custom-form/TextArea'
+import FormField from './custom-form/FormField'
+import Page from './Page'
+import StatEditor from './npc-card/StatsEdit'
+import ActionsEditor from './npc-card/ActionsEditor'
+import Button from './custom-form/Button'
+import NpcNav from './npc-card/NpcNav'
+import { randomTextFieldProps, statsFieldProps } from '../lib/form-tools'
 
-const randomTextField = (value, setValue, generateAction) => {
-  return {
-    value,
-    generateValue: () => {
-      setValue(generateAction())
-    },
-    onChange: e => {
-      setValue(e.target.value)
-    }
-  }
-}
-const randomTextAreaField = (value, setValue, generateAction) => {
-  return {
-    value,
-    generateValue: () => {
-      setValue(generateAction())
-    },
-    onChange: e => {
-      setValue(e.target.value)
-    }
-  }
+const generateRandomNPC = () => {
 }
 
 const NewNpc = () => {
   const [name, setName] = useState('initialName')
   const [looks, setLooks] = useState('plain')
-  const [selectedTab, setSelectedTab] = useState('looks')
   const [race, setRace] = useState('Human')
+  const [voice, setVoice] = useState('')
+  const [motives, setMotives] = useState('')
+  const [profession, setProfession] = useState('')
+  const [knowledge, setKnowledge] = useState('')
+  const [stats, setStats] = useState({ str: 10, dex: 10, con: 10, 'int': 10, wis: 10, cha: 10 })
+  const [actions, setActions] = useState([{
+    name: 'Shortsword',
+    toHit: 99,
+    rangeShort: 5,
+    rangeLong: null,
+    target: '1 target',
+    damageDice: '1d6+3',
+    damageType: 'slashing',
+    description: null
+  }, {
+    name: 'Teleport',
+    toHit: null,
+    rangeShort: 80,
+    rangeLong: null,
+    target: 'self',
+    damageDice: null,
+    damageType: null,
+    description: 'As a bonus action he can teleport to any space within range he can see.'
+  }])
 
-  let nameObject = randomTextField(name, setName, () => 'generated!')
-  let looksObject = randomTextField(looks, setLooks, () => 'generated looks!')
+  let nameObject = randomTextFieldProps(name, setName, () => 'generated!'),
+    looksObject = randomTextFieldProps(looks, setLooks, () => 'generated looks!'),
+    raceObject = randomTextFieldProps(race, setRace, () => 'generated race!'),
+    motivesObject = randomTextFieldProps(motives, setMotives),
+    voiceObject = randomTextFieldProps(voice, setVoice),
+    professionObject = randomTextFieldProps(profession, setProfession),
+    knowledgeObject = randomTextFieldProps(knowledge, setKnowledge),
+    statsObject = statsFieldProps(stats, setStats)
 
-  return (
-    <li className='card new-npc'>
-      <h3><RandomInputText {...nameObject} style={{ fontWeight: 700 }}/>
-        <span
-          className='star selected'></span>
-        <span><select>
-          <option value={race}>{race}</option>
-        </select></span>
-      </h3>
-      <ul className='tab-content'>
-        <li className={classNames({ show: selectedTab === 'looks' })}>
-          <RandomTextArea {...looksObject} style={{ height: '90%' }}/>
-        </li>
-      </ul>
-      {/*<li className={ classNames({ show: selectedTab === 'voice' }) }>*/}
-      {/*<NpcEditor />*/}
+  const textAreaStyle = { minHeight: '100px' }
 
-      {/*<p>{ voice }</p>*/}
-      {/*</li>*/}
-      {/*<li className={ classNames({ show: selectedTab === 'motives' }) }>*/}
-      {/*<div className='regen'></div>*/}
-      {/*<p>{ motives }</p>*/}
-      {/*</li>*/}
-      {/*<li className={ classNames({ show: selectedTab === 'prof' }) }>*/}
-      {/*<div className='regen'></div>*/}
-      {/*<p>{ profession }</p>*/}
-      {/*</li>*/}
-      {/*<li className={ classNames({ show: selectedTab === 'stats' }) }>*/}
-      {/*<Stats { ...stats } />*/}
-      {/*</li>*/}
-      {/*<li className={ classNames({ show: selectedTab === 'actions' }) }>*/}
-      {/*{ actions.map((action, idx) =>*/}
-      {/*<div key={`action-${idx}`}><strong>{ action.name }:</strong>*/}
-      {/*<to-hit>{ stringTheBonus(action.toHit) }</to-hit>*/}
-      {/*, {range(action.rangeShort, action.rangeLong)}*/}
-      {/*, {action.target},*/}
-      {/*<img src='/assets/ico/npc/drop-red.svg' style={{ height: '1.5em', width: '1.5em'}}></img>*/}
-      {/*<dice>*/}
-      {/*<ul>*/}
-      {/*{ stringTheDice(action.damageDice).map((part, idx) =>*/}
-      {/*<li key={ `gameDice-${idx}` }>{ part }</li>*/}
-      {/*) }*/}
-      {/*</ul>*/}
-      {/*</dice>*/}
-      {/*<span> { action.damageType }</span>*/}
-      {/*</div>*/}
-      {/*) }*/}
-      {/*</li>*/}
-      {/*</ul>*/}
+  return [
+    <NpcNav/>,
+    <Page>
+      <h1>Create <div className='regen' style={{ 'float': 'right', width: '1.5em', height: '1.5em' }}
+                          onClick={() => generateRandomNPC()}></div></h1>
+      <div className='new-npc'>
+        <h3><InputText label='Name' {...nameObject} style={{ fontWeight: 700 }}/></h3>
 
-      <ul className='tabs'>
-        <li
-          className={classNames({ selected: selectedTab === 'looks' })}
-          onClick={() => setSelectedTab('looks')}
-        >
-          Looks
-        </li>
-        <li
-          className={classNames({ selected: selectedTab === 'voice' })}
-          onClick={() => setSelectedTab('voice')}
-        >
-          Voice
-        </li>
-        <li
-          className={classNames({ selected: selectedTab === 'motives' })}
-          onClick={() => setSelectedTab('motives')}
-        >
-          Motives
-        </li>
-        <li
-          className={classNames({ selected: selectedTab === 'prof' })}
-          onClick={() => setSelectedTab('prof')}
-        >
-          Prof
-        </li>
-        <li
-          className={classNames({ selected: selectedTab === 'stats' })}
-          onClick={() => setSelectedTab('stats')}
-        >
-          Stats
-        </li>
-        <li
-          className={classNames({ selected: selectedTab === 'actions' })}
-          onClick={() => setSelectedTab('actions')}
-        >
-          Actions
-        </li>
-      </ul>
-    </li>
+        <FormField label='Race'>
+          <select {...raceObject}>
+            <option value={race}>{race}</option>
+          </select>
+        </FormField>
 
-  )
+        <TextArea label='Physical Description' {...looksObject} style={textAreaStyle}/>
+        <TextArea label='Voice' {...voiceObject} style={textAreaStyle}/>
+        <TextArea label='Motives' {...motivesObject} style={textAreaStyle}/>
+        <TextArea label='Profession' {...professionObject} style={textAreaStyle}/>
+        <TextArea label='Knowledge' {...knowledgeObject} style={textAreaStyle}/>
+
+        <Button text='Cancel' alignLeft={true} extraClassName='inverse'/>
+        <Button text='Save' alignRight={true}/>
+        {/*<StatEditor stats={statsObject.value} updater={statsObject.onChange} raceStats={{ str: 2, con: 1 }}/>*/}
+        {/*<ActionsEditor actions={actions} setActions={setActions}/>*/}
+
+      </div>
+    </Page>
+  ]
 }
 
 export default NewNpc
