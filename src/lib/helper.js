@@ -53,10 +53,13 @@ const stringifyCr = cr => {
   return crString
 }
 
+const pathParser = (root, fullPath) => fullPath.replace(root, '').split('/')
+
 module.exports = {
   stringTheBonus,
   range,
   stringTheDice,
   statDisplay,
-  stringifyCr
+  stringifyCr,
+  pathParser
 }

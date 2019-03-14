@@ -755,10 +755,10 @@ a {
     background: transparent url("/assets/ico/settings.svg") no-repeat center; }
 
 .not-header {
-  padding-top: 3.5em; }
+  padding-top: 4em; }
 
 .grimoire {
-  margin: 1em;
+  margin: 0 1em;
   float: left;
   width: 200px;
   height: 100vw; }

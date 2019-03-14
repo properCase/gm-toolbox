@@ -1,7 +1,7 @@
 import React from 'react'
 import './RandomInput.css'
 
-const RandomInputText = ({ label = '', generateValue, value, onChange, isInline = false, style, showRandom = false }) => {
+const InputText = ({ label = '', generateValue, value, onChange, isInline = false, style }) => {
   const htmlName = label.replace(new RegExp(' ', 'g'), '-')
   let inlineStyle = { display: 'inline-block' }
 
@@ -11,11 +11,11 @@ const RandomInputText = ({ label = '', generateValue, value, onChange, isInline 
     <div className='random-input' style={inlineStyle}>
       <div className='label'>
         { label && <label htmlFor={htmlName}>{label}:</label> }
-        { showRandom && <div className='regen' onClick={() => generateValue()}></div> }
+        { typeof generateValue === 'function' && <div className='regen' onClick={() => generateValue()}></div> }
       </div>
       <input type='text' name={htmlName} value={ value } onChange={ e => onChange(e) } style={style} />
     </div>
   )
 }
 
-export default RandomInputText
+export default InputText

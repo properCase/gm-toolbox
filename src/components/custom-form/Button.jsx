@@ -9,7 +9,7 @@ const Button = ({ text, alignRight, alignLeft, extraClassName, onPress }) => {
   if (alignRight) style.float = 'right'
 
   return (
-    <div className={className} style={style}>
+    <div className={className} style={style} onClick={() => onPress()}>
       {text}
     </div>
   )

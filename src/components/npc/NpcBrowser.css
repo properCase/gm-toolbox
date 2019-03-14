@@ -12,6 +12,7 @@
     height: 2em;
     overflow: hidden;
     vertical-align: middle;
-    margin: 0.4em; }
+    margin: 0.4em;
+    border-radius: 2px; }
 
 /*# sourceMappingURL=NpcBrowser.css.map */
