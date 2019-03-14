@@ -25,8 +25,8 @@ Planned Features:
     - Add notes on interactions which get logged chronologically.
 
 Wish List:
-[ ] Accounts and Groups
-[ ] Integration with SSO services
-[ ] Chat Log
-[ ] Integration of rolls to chat
-[ ] Integration with dndbeyond.com
+- [ ] Accounts and Groups
+- [ ] Integration with SSO services
+- [ ] Chat Log
+- [ ] Integration of rolls to chat
+- [ ] Integration with dndbeyond.com
